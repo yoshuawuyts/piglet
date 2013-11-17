@@ -49,3 +49,25 @@ A tiny grunt configuration
 ├── package.json
 └── README.md
 ````
+
+### Flow
+
+Grunt
+````
+build all tasks into .build > start connect server > open browser > watch files
+````
+
+JS
+````
+lint with jshint > concat & compile with uglify > integrate into views with linker
+````
+
+Styles
+````
+compile with styl > autoprefixer > lint with csslint > integrate into views with linker
+````
+
+Views
+````
+compile with jade > convert to js strings with jade
+````

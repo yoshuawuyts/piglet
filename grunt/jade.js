@@ -8,7 +8,7 @@ module.exports = {
       }
     },
     files: {
-      ".build/views.html": ["assets/views/*.jade", "assets/views/**/*.jade"]
+      '.build/views.html': ['assets/views/*.jade', 'assets/views/**/*.jade']
     }
   }
 };

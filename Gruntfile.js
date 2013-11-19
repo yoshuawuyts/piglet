@@ -26,15 +26,22 @@ module.exports = function (grunt) {
   }
 
   grunt.initConfig({
-    compile: require('./grunt/config/compile'),
-    clean: require('./grunt/config/clean'),
-    copy: require('./grunt/config/copy'),
-    jshint: require('./grunt/config/lint/jshint'),
-    jsonlint: require('./grunt/config/lint/jsonlint'),
-    'merge-conflict': require('./grunt/config/lint/merge-conflict'),
-    mochaTest: require('./grunt/config/mocha-test'),
-    uglify: require('./grunt/config/uglify'),
-    watch: require('./grunt/config/watch'),
+    autoprefixer: require('./grunt/autoprefixer'),
+    clean: require('./grunt/clean'),
+    connect: require('./grunt/connect'),
+    copy: require('./grunt/copy'),
+    jade: require('./grunt/jade'),
+    jshint: require('./grunt/jshint'),
+    jsonlint: require('./grunt/jsonlint'),
+    karma: require('./grunt/karma'),
+    linker: require('./grunt/linker'),
+    'merge-conflict': require('./grunt/merge-conflict'),
+    mochaTest: require('./grunt/mocha-test'),
+    protractor: require('./grunt/protractor'),
+    release: require('./grunt/release'),
+    styl: require('./grunt/styl'),
+    uglify: require('./grunt/uglify'),
+    watch: require('./grunt/watch')
   });
 
 
@@ -50,8 +57,6 @@ module.exports = function (grunt) {
 
   // Load all grunt tasks
   require('load-grunt-tasks')(grunt);
-  grunt.loadTasks('grunt/tasks');
-
 
   grunt.registerTask('install-git-hook', 'copy:install-git-hook');
 
@@ -63,6 +68,7 @@ module.exports = function (grunt) {
   grunt.registerTask('lint', [
     'jshint:api',
     'jshint:assets',
+    'jshint:config',
     'jsonlint:all',
   ]);
 
@@ -78,6 +84,6 @@ module.exports = function (grunt) {
     'lint',
     'build',
     'test',
-    'server'
+    'watch'
   ]);
 };

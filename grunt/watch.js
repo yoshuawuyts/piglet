@@ -1,18 +1,27 @@
 'use strict';
 
 module.exports = {
-  'jshint.main': {
+
+  'jshint.api': {
+    files: [
+      'api/**/*.js'
+    ],
+    tasks: ['jshint:apiFiltered'],
+  },
+
+  'jshint.assets': {
+    files: ['assets/js/**/*.js'],
+    tasks: ['jshint:assetsFiltered'],
+  },
+
+  'jshint.config': {
     files: [
       'Gruntfile.js',
       'grunt/**/*.js',
+      'config/*.js',
       'test/**/*/js',
     ],
-    tasks: ['jshint:mainFiltered'],
-  },
-
-  'jshint.src': {
-    files: ['lib/**/*.js'],
-    tasks: ['jshint:srcFiltered'],
+    tasks: ['jshint:configFiltered'],
   },
 
   jsonlint: {

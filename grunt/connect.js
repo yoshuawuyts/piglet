@@ -2,36 +2,20 @@
 
 module.exports = {
   options: {
-    port: 9000,
-    // Change this to '0.0.0.0' to access the server from outside.
+    port: 1337,
     hostname: 'localhost',
+    // Set live reload port
     livereload: 35729
   },
 
   livereload: {
     options: {
+      // Open default page in browser
       open: true,
+      // Define from which folder assets should be served
       base: [
-        '.tmp',
-        '<%= yeoman.app %>'
+        '.build'
       ]
     }
   },
-
-  test: {
-    options: {
-      port: 9001,
-      base: [
-        '.tmp',
-        'test',
-        '<%= yeoman.app %>'
-      ]
-    }
-  },
-  
-  dist: {
-    options: {
-      base: '<%= yeoman.dist %>'
-    }
-  }
 };

@@ -1,15 +1,22 @@
 'use strict';
 
 module.exports = {
-  dist: {
-    files: [
-      {
-        dot: true,
-        src: [
-          // 'dist/**/*',
-          // 'build/cov/**/*',
-        ],
-      },
-    ],
+  before: {
+    files: [{
+      dot: true,
+      src: [
+        '.build',
+        '.tmp'
+      ],
+    },],
+  },
+
+  after: {
+    files: [{
+      dot: true,
+      src: [
+        '.tmp'
+      ],
+    },],
   },
 };

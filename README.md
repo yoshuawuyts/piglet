@@ -38,8 +38,7 @@ A tiny grunt configuration
 ├── test
 │   ├── api              
 │   ├── assets            
-│   ├── integration       // E2E testing
-│   └── karma.conf.js     // test runner config
+│   └── integration       // E2E testing
 ├── .bowerrc
 ├── .gitignore
 ├── .travis.yml

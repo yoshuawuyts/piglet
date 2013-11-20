@@ -4,7 +4,8 @@ module.exports = {
   options: {
        browsers: ['last 1 version', '> 1%']
     },
-    no_dest: {
-      src: '.build/style.css'
+    prefix: {
+      src: '.tmp/style.css',
+      dest: '.build/style.css'
     }
 };

@@ -34,7 +34,6 @@ module.exports = function (grunt) {
     jshint: require('./grunt/jshint'),
     jsonlint: require('./grunt/jsonlint'),
     karma: require('./grunt/karma'),
-    linker: require('./grunt/linker'),
     'merge-conflict': require('./grunt/merge-conflict'),
     mochaTest: require('./grunt/mocha-test'),
     protractor: require('./grunt/protractor'),
@@ -69,15 +68,23 @@ module.exports = function (grunt) {
     'jshint:api',
     'jshint:assets',
     'jshint:config',
+    'jshint:test',
     'jsonlint:all',
   ]);
 
   grunt.registerTask('build', [
-    'clean',
+    'clean:before',
+    'styl',
+    'autoprefixer',
     'uglify:html',
+    'clean:after'
   ]);
 
-  grunt.registerTask('test', ['mochaTest:dot']);
+  grunt.registerTask('test', [
+    'mochaTest',
+    'karma',
+    'protractor'
+  ]);
 
   grunt.registerTask('default', [
     'merge-conflict',

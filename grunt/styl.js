@@ -7,6 +7,6 @@ module.exports = {
       compress: true
     },
     src: 'assets/styles/index',
-    dest: 'tmp/style.css'
+    dest: '.tmp/style.css'
   }
 };

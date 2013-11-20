@@ -3,12 +3,15 @@
 module.exports = {
   compile: {
     options: {
-      data: {
-        debug: false
-      }
+      client: true,
+      compileDebug: false
     },
-    files: {
-      '.build/views.html': ['assets/views/*.jade', 'assets/views/**/*.jade']
-    }
+    files: [{
+      expand: true,
+      cwd: 'assets/views/',
+      src: ['{**/, **/**/}*.jade', '*.jade'],
+      dest: '.tmp/',
+      ext: '.js',
+    }]
   }
 };

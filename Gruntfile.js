@@ -76,6 +76,7 @@ module.exports = function (grunt) {
     'clean:before',
     'styl',
     'autoprefixer',
+    'jade:compile',
     'uglify:html',
     'clean:after'
   ]);

@@ -6,6 +6,6 @@ module.exports = {
   },
   prefix: {
     src: '.tmp/style.css',
-    dest: 'build/style.css'
+    dest: '.tmp/style.prefix.css'
   }
 };

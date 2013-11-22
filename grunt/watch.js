@@ -2,40 +2,61 @@
 
 module.exports = {
 
-  'jshint.api': {
+  'css': {
     files: [
-      'api/**/*.js'
+      'assets/styles{/, /**/, /**/**/}*.styl'
     ],
-    tasks: ['jshint:apiFiltered'],
+    tasks: ['css', 'clean:after'],
   },
 
-  'jshint.assets': {
-    files: ['assets/js/**/*.js'],
-    tasks: ['jshint:assetsFiltered'],
+  'jade': {
+    files: [
+      'assets/views{/, /**/, /**/**/}*.jade'
+    ],
+    tasks: ['jade:compile', 'clean:after'],
   },
 
-  'jshint.config': {
+  'api': {
+    files: [
+      'api{/, /**/, /**/**}*.js'
+    ],
+    tasks: ['jsbeautifier:api', 'jshint:api', 'mochaTest:dot'],
+  },
+
+  'assets': {
+    files: ['assets/js{/, /**/, /**/**/}*.js'],
+    tasks: ['jsbeautifier:assets', 'jshint:assets'],
+  },
+
+  'config': {
     files: [
       'Gruntfile.js',
       'grunt/**/*.js',
       'config/*.js',
-      'test/**/*/js',
     ],
-    tasks: ['jshint:configFiltered'],
+    tasks: ['jsbeautifier:config', 'jshint:config'],
+  },
+
+  'tests': {
+    files: [
+      'tests{/, /**/, /**/**}*.js'
+    ],
+    tasks: ['jsbeautifier:tests', 'jshint:tests'],
   },
 
   jsonlint: {
     files: [
       'package.json',
       '.jshintrc',
-      '{lib,examples,tests}/**/*.json',
+      '.jsbeautifyrc',
+      'tests/**/*.json',
     ],
-    tasks: ['jsonlint:allFiltered'],
+    tasks: ['jsonlint:all'],
   },
 
   mochaTest: {
     files: [
-      'lib/**/*.js',
+      '{api/, api/**/}*.js',
       'tests/**/*.js',
     ],
     tasks: ['mochaTest:dot']

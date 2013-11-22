@@ -4,9 +4,9 @@ module.exports = {
   compile: {
     options: {
       whitespace: true,
-      compress: true
+      compress: false
     },
-    src: 'assets/styles/index',
+    src: 'assets/styles/index.styl',
     dest: '.tmp/style.css'
   }
 };

@@ -33,4 +33,4 @@ A tiny grunt configuration
 ````
 
 ## License
-2013, Versity
+MIT

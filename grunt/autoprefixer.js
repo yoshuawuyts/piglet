@@ -2,10 +2,10 @@
 
 module.exports = {
   options: {
-       browsers: ['last 1 version', '> 1%']
-    },
-    prefix: {
-      src: '.tmp/style.css',
-      dest: '.build/style.css'
-    }
+    browsers: ['last 1 version', '> 1%']
+  },
+  prefix: {
+    src: '.tmp/style.css',
+    dest: 'build/style.css'
+  }
 };

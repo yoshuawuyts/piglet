@@ -2,13 +2,11 @@
 
 module.exports = {
   'install-git-hook': {
-    files: [
-      {
-        dest: '.git/hooks/',
-        src: [
-          'tools/hooks/pre-commit',
-        ],
-      },
-    ],
+    files: [{
+      dest: '.git/hooks/',
+      src: [
+        'tools/hooks/pre-commit',
+      ],
+    }, ],
   },
 };

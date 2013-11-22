@@ -9,14 +9,8 @@ module.exports = {
       screw_ie8: true,
     },
   },
-  html: {
-    files: {
-      'dist/html/l20n.min.js': ['dist/html/l20n.js'],
-    }
-  },
-  gaia: {
-    files: {
-      'dist/gaia/l20n.min.js': ['dist/gaia/l20n.js'],
-    }
+  compile: {
+    src: '.tmp/concat.js',
+    dest: 'build/versity.min.js',
   },
 };

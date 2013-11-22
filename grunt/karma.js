@@ -1,16 +1,21 @@
 'use strict';
 
 module.exports = {
-	options: {
+  options: {
     runnerPort: 9999,
-	},
+    frameworks: ['mocha'],
+    reporters: ['dots'],
+    port: 9876,
+
+  },
   continuous: {
+    configFile: 'tests/karma.conf.js',
     singleRun: true,
-    browsers: ['PhantomJS']
+    browsers: ['PhantomJS'],
   },
   unit: {
+    configFile: 'tests/karma.conf.js',
     background: true,
     browsers: ['PhantomJS', 'Chrome'],
-    reporters: 'dots'
-  },
+  }
 };

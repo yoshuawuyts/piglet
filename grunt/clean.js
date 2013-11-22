@@ -8,7 +8,7 @@ module.exports = {
         '.build',
         '.tmp'
       ],
-    },],
+    }, ],
   },
 
   after: {
@@ -17,6 +17,6 @@ module.exports = {
       src: [
         '.tmp'
       ],
-    },],
+    }, ],
   },
 };

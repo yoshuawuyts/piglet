@@ -15,7 +15,7 @@ npm-debug.log
 node_modules
 
 # folders
-.build
+build
 .tmp
 api
 assets

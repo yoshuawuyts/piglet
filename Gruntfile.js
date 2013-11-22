@@ -2,20 +2,19 @@
 
 module.exports = function (grunt) {
   var fs = require('fs'),
-  // These are pairs [task, target] for which a copied tasks with an additional
-  // filter option are created. Those tasks are then passed to the watch task
-  // to be fired on file changes; the filter option makes sure tasks are fired
-  // only on changed files, making them a lot faster. Unfortunately, we can't
-  // just apply a filter to the basic configuration as no files would be
-  // processed during initial runs.
-  filteredTasks = [
-    ['jshint', 'api'],
-    ['jshint', 'assets'],
-    ['jshint', 'config'],
-    ['jshint', 'test'],
-    ['jsonlint', 'all'],
-  ];
-
+    // These are pairs [task, target] for which a copied tasks with an additional
+    // filter option are created. Those tasks are then passed to the watch task
+    // to be fired on file changes; the filter option makes sure tasks are fired
+    // only on changed files, making them a lot faster. Unfortunately, we can't
+    // just apply a filter to the basic configuration as no files would be
+    // processed during initial runs.
+    filteredTasks = [
+      ['jshint', 'api'],
+      ['jshint', 'assets'],
+      ['jshint', 'config'],
+      ['jshint', 'test'],
+      ['jsonlint', 'all'],
+    ];
 
   function filterNewFiles(src) {
     // Returns a function that tells if a file was recently modified;
@@ -28,9 +27,11 @@ module.exports = function (grunt) {
   grunt.initConfig({
     autoprefixer: require('./grunt/autoprefixer'),
     clean: require('./grunt/clean'),
+    concat: require('./grunt/concat'),
     connect: require('./grunt/connect'),
     copy: require('./grunt/copy'),
     jade: require('./grunt/jade'),
+    jsbeautifier: require('./grunt/jsbeautifier'),
     jshint: require('./grunt/jshint'),
     jsonlint: require('./grunt/jsonlint'),
     karma: require('./grunt/karma'),
@@ -40,9 +41,8 @@ module.exports = function (grunt) {
     release: require('./grunt/release'),
     styl: require('./grunt/styl'),
     uglify: require('./grunt/uglify'),
-    watch: require('./grunt/watch')
+    watch: require('./grunt/watch'),
   });
-
 
   // Add copies of watched tasks with an added filter option.
   filteredTasks.forEach(function (taskAndTarget) {
@@ -65,6 +65,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('lint', [
+    'jsbeautifier:beautify',
     'jshint:api',
     'jshint:assets',
     'jshint:config',
@@ -77,14 +78,14 @@ module.exports = function (grunt) {
     'styl',
     'autoprefixer',
     'jade:compile',
-    'uglify:html',
+    'concat',
+    'uglify:compile',
     'clean:after'
   ]);
 
   grunt.registerTask('test', [
     'mochaTest',
-    'karma',
-    'protractor'
+    'karma:unit',
   ]);
 
   grunt.registerTask('default', [

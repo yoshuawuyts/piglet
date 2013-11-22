@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	compile: {
+  compile: {
     options: {
       whitespace: true,
       compress: true

@@ -46,6 +46,10 @@
     "grunt-karma": "~0.6.2",
     "protractor": "~0.12.1",
     "grunt-protractor-runner": "~0.1.9",
-    "grunt-contrib-jade": "~0.8.0"
+    "grunt-contrib-jade": "~0.8.0",
+    "mocha": "~1.14.0",
+    "karma-mocha": "~0.1.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-jsbeautifier": "~0.2.3"
   }
 }

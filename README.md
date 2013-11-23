@@ -13,6 +13,8 @@ __JS:__ Concat, Uglify
 
 __Lint:__ JSbeautifier, JShint
 
+__Time:__ time-grunt benchmark
+
 With autoreload, watch and more...
 
 ## Directory structure

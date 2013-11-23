@@ -25,14 +25,11 @@ module.exports = function (grunt) {
 
   // Load all grunt tasks
   require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
 
   grunt.registerTask('install-git-hook', 'copy:install-git-hook');
 
-  grunt.registerTask('server', [
-    'build',
-    'watch',
-  ]);
-
+  // Lint all files
   grunt.registerTask('lint', [
     'jsbeautifier',
     'jshint:api',
@@ -42,18 +39,19 @@ module.exports = function (grunt) {
     'jsonlint:all',
   ]);
 
+  // Build views
   grunt.registerTask('css', [
     'styl',
     'autoprefixer',
     'csso:optimize',
   ]);
 
+  // Build html
   grunt.registerTask('views', [
-    'styl',
-    'autoprefixer',
-    'csso:optimize',
+    'jade',
   ]);
 
+  // Build css, html & js
   grunt.registerTask('build', [
     'clean:before',
     'css',
@@ -63,13 +61,28 @@ module.exports = function (grunt) {
     'clean:after'
   ]);
 
+  // Execute tests
   grunt.registerTask('test', [
     'mochaTest',
     'karma:unit',
   ]);
 
+  // Check the performance of all tasks
+  grunt.registerTask('time', [
+    'lint',
+    'build',
+    'test',
+  ]);
+
+  // Commit your changes
+  grunt.registerTask('commit', [
+    'lint',
+    'build',
+    'test',
+  ]);
+
+  // Build, lint, test and server
   grunt.registerTask('default', [
-    'merge-conflict',
     'lint',
     'build',
     'test',

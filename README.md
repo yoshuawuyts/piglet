@@ -1,4 +1,4 @@
-# piglet [![Code Climate](https://codeclimate.com/github/yoshuawuyts/piglet.png)](https://codeclimate.com/github/yoshuawuyts/piglet)
+# piglet [![Dependency Status](https://gemnasium.com/yoshuawuyts/piglet.png)](https://gemnasium.com/yoshuawuyts/piglet) [![Code Climate](https://codeclimate.com/github/yoshuawuyts/piglet.png)](https://codeclimate.com/github/yoshuawuyts/piglet)
 
 
 A tiny grunt configuration

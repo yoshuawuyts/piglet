@@ -6,31 +6,36 @@ module.exports = {
     reporter: require('jshint-stylish')
   },
 
+  all: {
+    src: [
+      'api{/, /**/, /**/**}*.js',
+      'assets/js{/, /**/, /**/**/}*.js',
+      '*.js', 'grunt/*.js', 'config/*.js',
+      'tests{/, /**/, /**/**}*.js'
+    ]
+  },
+
   api: {
     src: [
-      'api/**/*.js'
+      'api{/, /**/, /**/**}*.js',
     ]
   },
 
   assets: {
     src: [
-      'assets/js/**/*.js',
-      'assets/js/app.js'
+      'assets/js{/, /**/, /**/**/}*.js',
     ]
   },
 
   config: {
     src: [
-      'Gruntfile.js',
-      'grunt/*.js',
-      'config/*.js'
+      '*.js', 'grunt/*.js', 'config/*.js',
     ]
   },
 
   test: {
     src: [
-      'test/**/*.js',
-      'test/karma.conf.js'
+      'tests{/, /**/, /**/**}*.js'
     ]
   }
 };

@@ -31,16 +31,13 @@ module.exports = function (grunt) {
 
   // Lint all files
   grunt.registerTask('lint', [
-    'jsbeautifier',
-    'jshint:api',
-    'jshint:assets',
-    'jshint:config',
-    'jshint:test',
+    'jsbeautifier:all',
+    'jshint:all',
     'jsonlint:all',
   ]);
 
   // Build views
-  grunt.registerTask('css', [
+  grunt.registerTask('styles', [
     'styl',
     'autoprefixer',
     'csso:optimize',
@@ -48,16 +45,21 @@ module.exports = function (grunt) {
 
   // Build html
   grunt.registerTask('views', [
-    'jade',
+    'jade:compile',
+  ]);
+
+  // Build js
+  grunt.registerTask('js', [
+    'concat',
+    'uglify:compile',
   ]);
 
   // Build css, html & js
   grunt.registerTask('build', [
     'clean:before',
-    'css',
-    'jade:compile',
-    'concat',
-    'uglify:compile',
+    'styles',
+    'views',
+    'js',
     'clean:after'
   ]);
 

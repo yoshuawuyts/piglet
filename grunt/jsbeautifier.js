@@ -1,6 +1,17 @@
 'use strict';
 
 module.exports = {
+  all: {
+    src: [
+      'api{/, /**/, /**/**}*.js',
+      'assets/js{/, /**/, /**/**/}*.js',
+      '*.js', 'grunt/*.js', 'config/*.js',
+      'tests{/, /**/, /**/**}*.js'
+    ],
+    options: {
+      config: '.jsbeautifyrc'
+    }
+  },
   api: {
     src: ['api{/, /**/, /**/**}*.js'],
     options: {
@@ -25,11 +36,4 @@ module.exports = {
       config: '.jsbeautifyrc'
     }
   },
-  verify: {
-    src: ['*.js', 'assets{/, /**/, /**/**}*.js', 'api{/, /**/, /**/**}*.js', 'tests{/, /**/, /**/**}*.js'],
-    options: {
-      mode: 'VERIFY_ONLY',
-      config: '.jsbeautifyrc'
-    }
-  }
 };

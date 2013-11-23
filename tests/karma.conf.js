@@ -1,3 +1,5 @@
+'use strict';
+
 // Karma configuration
 // Generated on Wed Nov 20 2013 14:19:12 GMT+0100 (W. Europe Standard Time)
 

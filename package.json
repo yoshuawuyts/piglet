@@ -21,6 +21,7 @@
     "url": "https://github.com/yoshuawuyts/piglet/issues"
   },
   "devDependencies": {
+    "chai": "~1.8.1",
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.1",
     "grunt-connect": "~0.2.0",

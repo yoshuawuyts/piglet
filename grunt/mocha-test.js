@@ -4,7 +4,7 @@ module.exports = {
   dot: {
     options: {
       reporter: 'dot',
-      require: 'should'
+      require: 'chai'.assert
     },
 
     src: 'test/api/**/*.js'

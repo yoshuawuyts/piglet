@@ -1,4 +1,4 @@
-# piglet [![Code Climate](https://codeclimate.com/repos/5290b0cac7f3a34a3804b2b7/badges/6e3552eab1ef6b6b4382/gpa.png)](https://codeclimate.com/repos/5290b0cac7f3a34a3804b2b7/feed)
+# piglet [![Code Climate](https://codeclimate.com/github/yoshuawuyts/piglet.png)](https://codeclimate.com/github/yoshuawuyts/piglet)
 
 
 A tiny grunt configuration

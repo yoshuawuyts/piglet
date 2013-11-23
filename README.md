@@ -1,9 +1,21 @@
-piglet
-======
+# piglet
+
 
 A tiny grunt configuration
 
-### Directory structure
+## Tasks
+
+__CSS:__ Styl, Autoprefixer, CSSo optimizer
+
+__Views:__ Jade
+
+__JS:__ Concat, Uglify
+
+__Lint:__ JSbeautifier, JShint
+
+With autoreload, watch and more...
+
+## Directory structure
 ````
 .
 ├── api

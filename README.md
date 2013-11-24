@@ -47,4 +47,4 @@ With autoreload, watch and more...
 ````
 
 ## License
-MIT
+MIT © [Yoshua Wuyts](yoshuawuyts.com)

@@ -11,6 +11,6 @@ module.exports = {
   },
   compile: {
     src: '.tmp/concat.js',
-    dest: 'build/versity.min.js',
+    dest: 'build/app.min.js',
   },
 };

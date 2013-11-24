@@ -21,3 +21,6 @@ build
 api
 assets
 config
+
+# files
+app.js

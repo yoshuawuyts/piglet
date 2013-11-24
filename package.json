@@ -24,9 +24,9 @@
     "chai": "~1.8.1",
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.1",
-    "grunt-connect": "~0.2.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-jade": "~0.8.0",
     "grunt-contrib-jshint": "~0.7.1",
@@ -52,6 +52,9 @@
     "load-grunt-tasks": "~0.2.0",
     "mocha": "~1.14.0",
     "protractor": "~0.13.0",
-    "time-grunt": "~0.2.3"
+    "time-grunt": "~0.2.3",
+    "grunt-concurrent": "~0.4.2",
+    "grunt-node-inspector": "~0.1.2",
+    "grunt-nodemon": "~0.1.2"
   }
 }

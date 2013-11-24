@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     autoprefixer: require('./grunt/autoprefixer'),
     clean: require('./grunt/clean'),
     concat: require('./grunt/concat'),
+    concurrent: require('./grunt/concurrent'),
     connect: require('./grunt/connect'),
     copy: require('./grunt/copy'),
     csso: require('./grunt/csso'),
@@ -16,6 +17,8 @@ module.exports = function (grunt) {
     karma: require('./grunt/karma'),
     'merge-conflict': require('./grunt/merge-conflict'),
     mochaTest: require('./grunt/mocha-test'),
+    'node-inspector': require('./grunt/node-inspector'),
+    nodemon: require('./grunt/nodemon'),
     protractor: require('./grunt/protractor'),
     release: require('./grunt/release'),
     styl: require('./grunt/styl'),
@@ -26,8 +29,6 @@ module.exports = function (grunt) {
   // Load all grunt tasks
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
-
-  grunt.registerTask('install-git-hook', 'copy:install-git-hook');
 
   // Lint all files
   grunt.registerTask('lint', [
@@ -57,9 +58,7 @@ module.exports = function (grunt) {
   // Build css, html & js
   grunt.registerTask('build', [
     'clean:before',
-    'styles',
-    'views',
-    'js',
+    'concurrent:build',
     'clean:after'
   ]);
 
@@ -78,6 +77,7 @@ module.exports = function (grunt) {
 
   // Commit your changes
   grunt.registerTask('commit', [
+    'mergeConflict',
     'lint',
     'build',
     'test',
@@ -88,6 +88,6 @@ module.exports = function (grunt) {
     'lint',
     'build',
     'test',
-    'watch'
+    'concurrent:dev'
   ]);
 };

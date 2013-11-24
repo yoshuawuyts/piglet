@@ -1,6 +1,6 @@
 {
   "name": "piglet",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A tiny grunt configuration",
   "main": "Gruntfile.js",
   "scripts": {

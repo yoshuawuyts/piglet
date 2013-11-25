@@ -6,7 +6,7 @@ module.exports = {
   },
 
   dev: {
-    tasks: [ /*'nodemon', */ 'node-inspector', 'watch'],
+    tasks: ['nodemon', 'node-inspector', 'watch'],
   },
 
   build: {

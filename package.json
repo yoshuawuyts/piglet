@@ -55,6 +55,7 @@
     "time-grunt": "~0.2.3",
     "grunt-concurrent": "~0.4.2",
     "grunt-node-inspector": "~0.1.2",
-    "grunt-nodemon": "~0.1.2"
+    "grunt-nodemon": "~0.1.2",
+    "grunt-contrib-csslint": "~0.1.2"
   }
 }

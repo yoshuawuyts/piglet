@@ -9,6 +9,7 @@ module.exports = function (grunt) {
     concurrent: require('./grunt/concurrent'),
     connect: require('./grunt/connect'),
     copy: require('./grunt/copy'),
+    csslint: require('./grunt/csslint'),
     csso: require('./grunt/csso'),
     jade: require('./grunt/jade'),
     jsbeautifier: require('./grunt/jsbeautifier'),
@@ -42,6 +43,7 @@ module.exports = function (grunt) {
     'styl',
     'autoprefixer',
     'csso:optimize',
+    'csslint',
   ]);
 
   // Build html
@@ -59,7 +61,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:before',
     'concurrent:build',
-    'clean:after'
+    'clean:after',
   ]);
 
   // Execute tests
@@ -88,6 +90,6 @@ module.exports = function (grunt) {
     'lint',
     'build',
     'test',
-    'concurrent:dev'
+    'concurrent:dev',
   ]);
 };

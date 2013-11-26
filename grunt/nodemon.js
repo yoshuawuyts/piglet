@@ -3,16 +3,16 @@
 module.exports = {
   dev: {
     options: {
-      file: 'app.js',
       args: [''],
-      nodeArgs: ['--debug'],
-      watchedFolders: ['api/'],
+      cwd: './',
       delayTime: 1,
-      legacyWatch: true,
       env: {
-        PORT: '8181'
+        PORT: '1337',
       },
-      cwd: __dirname
+      file: 'app.js',
+      legacyWatch: true,
+      nodeArgs: ['--debug'],
+      watchedFolders: ['./', 'api/'],
     }
   },
 };

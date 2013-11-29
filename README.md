@@ -15,6 +15,8 @@ A tiny grunt configuration
 
 ````time````: Lint, build & test while benchmarking
 
+````deploy````: Add git tags & push upstream
+
 ````default````: Build, lint, test, server & watch
 
 While always autoreloading, autocorrecting and watching everything...

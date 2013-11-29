@@ -3,19 +3,21 @@
 
 A tiny grunt configuration
 
-## Tasks
+## Commands
 
-__CSS:__ Styl, Autoprefixer, CSSo optimizer
+````styles````:  Compile styl, autoprefix, optimize with CSSo
 
-__Views:__ Jade
+````views````: Compile jade
 
-__JS:__ Concat, Uglify
+````js````: Concat, optimize, minify and mangle
 
-__Lint:__ JSbeautifier, JShint
+````build````: JSbeautifier, JShint
 
-__Time:__ time-grunt benchmark
+````time````: Lint, build & test while benchmarking
 
-With autoreload, watch and more...
+````default````: Build, lint, test, server & watch
+
+While always autoreloading, autocorrecting and watching everything...
 
 ## Directory structure
 ````

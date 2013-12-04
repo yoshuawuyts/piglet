@@ -32,7 +32,7 @@ While always autoreloading, autocorrecting and watching everything...
 │   ├── styles
 │   └── views
 ├── build
-├── config                // config
+├── config                // server config
 ├── grunt
 └── tests  
 ````

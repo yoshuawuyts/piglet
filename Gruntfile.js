@@ -1,5 +1,46 @@
 'use strict';
 
+var apiPath = [
+  'api{/, /**/, /**/**}*.js'
+];
+
+var configPath = [
+  'Gruntfile.js',
+  'grunt/**/*.js',
+  'config/*.js',
+];
+
+var stylesPath = [
+  'assets/styles{/, /**/, /**/**/}*.styl'
+];
+
+var jsAssetsPath = [
+  'assets/js{/, /**/, /**/**/}*.js'
+];
+
+var jsonPath = [
+  'package.json',
+  '.jshintrc',
+  '.jsbeautifyrc',
+  'tests/**/*.json',
+];
+
+var testsPath = [
+  'tests{/, /**/, /**/**}*.js'
+];
+
+var viewsPath = [
+  'assets/views{/, /**/, /**/**/}*.jade'
+];
+
+exports.api = apiPath;
+exports.config = configPath;
+exports.jsAssets = jsAssetsPath;
+exports.json = jsonPath;
+exports.styles = stylesPath;
+exports.tests = testsPath;
+exports.views = viewsPath;
+
 module.exports = function (grunt) {
 
   grunt.initConfig({

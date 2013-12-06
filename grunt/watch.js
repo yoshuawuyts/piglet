@@ -1,64 +1,54 @@
 'use strict';
 
+var gruntfile = require('../Gruntfile');
+
+var apiPath = gruntfile.api;
+var configPath = gruntfile.config;
+var jsAssetsPath = gruntfile.jsAssets;
+var jsonPath = gruntfile.json;
+var stylesPath = gruntfile.styles;
+var testsPath = gruntfile.tests;
+var viewsPath = gruntfile.views;
+
 module.exports = {
 
   'css': {
-    files: [
-      'assets/styles{/, /**/, /**/**/}*.styl'
-    ],
+    files: [stylesPath],
     tasks: ['css', 'clean:after'],
   },
 
   'jade': {
-    files: [
-      'assets/views{/, /**/, /**/**/}*.jade'
-    ],
+    files: [viewsPath],
     tasks: ['jade:compile', 'clean:after'],
   },
 
   'api': {
-    files: [
-      'api{/, /**/, /**/**}*.js'
-    ],
-    tasks: ['jsbeautifier:api', 'jshint:api', 'mochaTest:dot'],
+    files: [apiPath],
+    tasks: ['jsbeautifier:api', 'jshint:api', 'mochaTest:dot'], 
   },
 
   'assets': {
-    files: ['assets/js{/, /**/, /**/**/}*.js'],
+    files: [jsAssetsPath],
     tasks: ['jsbeautifier:assets', 'jshint:assets'],
   },
 
   'config': {
-    files: [
-      'Gruntfile.js',
-      'grunt/**/*.js',
-      'config/*.js',
-    ],
+    files: [configPath],
     tasks: ['jsbeautifier:config', 'jshint:config'],
   },
 
   'tests': {
-    files: [
-      'tests{/, /**/, /**/**}*.js'
-    ],
+    files: [testsPath],
     tasks: ['jsbeautifier:tests', 'jshint:tests'],
   },
 
   jsonlint: {
-    files: [
-      'package.json',
-      '.jshintrc',
-      '.jsbeautifyrc',
-      'tests/**/*.json',
-    ],
+    files: [jsonPath],
     tasks: ['jsonlint:all'],
   },
 
   mochaTest: {
-    files: [
-      '{api/, api/**/}*.js',
-      'tests/**/*.js',
-    ],
+    files: [apiPath, testsPath],
     tasks: ['mochaTest:dot']
   }
 };

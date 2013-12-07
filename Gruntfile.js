@@ -1,49 +1,23 @@
 'use strict';
 
-var apiPath = [
-  'api{/, /**/, /**/**}*.js'
-];
-
-var configPath = [
-  'Gruntfile.js',
-  'grunt/**/*.js',
-  'config/*.js',
-];
-
-var stylesPath = [
-  'assets/styles{/, /**/, /**/**/}*.styl'
-];
-
-var jsAssetsPath = [
-  'assets/js{/, /**/, /**/**/}*.js'
-];
-
-var jsonPath = [
-  'package.json',
-  '.jshintrc',
-  '.jsbeautifyrc',
-  'tests/**/*.json',
-];
-
-var testsPath = [
-  'tests{/, /**/, /**/**}*.js'
-];
-
-var viewsPath = [
-  'assets/views{/, /**/, /**/**/}*.jade'
-];
-
-exports.api = apiPath;
-exports.config = configPath;
-exports.jsAssets = jsAssetsPath;
-exports.json = jsonPath;
-exports.styles = stylesPath;
-exports.tests = testsPath;
-exports.views = viewsPath;
-
 module.exports = function (grunt) {
 
   grunt.initConfig({
+
+    // configurable paths
+    vars: {
+      apiPath: 'api{/, /**/, /**/**}*.js',
+      configPath: ['Gruntfile.js', 'grunt/**/*.js', 'config/*.js'],
+      stylesPath: 'assets/styles{/, /**/, /**/**/}*.styl',
+      jsAssetsPath: 'assets/js{/, /**/, /**/**/}*.js',
+      jsonPath: ['./*.json', '.jshintrc', '.jsbeautifyrc', 'tests/**/*.json'],
+      testsPath: 'tests{/, /**/, /**/**}*.js',
+      viewsPath: 'assets/views{/, /**/, /**/**/}*.jade',
+      tmpPath: '.tmp',
+      buildPath: 'build'
+    },
+
+    // load task configuration
     autoprefixer: require('./grunt/autoprefixer'),
     clean: require('./grunt/clean'),
     concat: require('./grunt/concat'),
@@ -57,7 +31,6 @@ module.exports = function (grunt) {
     jshint: require('./grunt/jshint'),
     jsonlint: require('./grunt/jsonlint'),
     karma: require('./grunt/karma'),
-    'merge-conflict': require('./grunt/merge-conflict'),
     mochaTest: require('./grunt/mocha-test'),
     'node-inspector': require('./grunt/node-inspector'),
     nodemon: require('./grunt/nodemon'),
